@@ -1,8 +1,6 @@
 #!/bin/bash
-
-#!/bin/bash
-#Ask the GitHub username
-while true,do
+#Ask the github username
+while true;do
 	read -p 'Please enter your name: ' username
 	if [[ -z "$username" ]];then
 		echo "Please enter your name!"
