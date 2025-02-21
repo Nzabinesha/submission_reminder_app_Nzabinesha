@@ -1,7 +1,13 @@
 #!/bin/bash
 
-# Prompt user for their name
-read -p "Enter your name: " user_name
+# Prompt user for their name while true;do
+	read -p 'Please enter your name: ' username
+	if [[ -z "$username" ]];then
+		echo "Please enter your name!"
+	else
+		break
+	fi
+done
 
 main_dir="submission_reminder_$user_name"
 mkdir -p $main_dir
