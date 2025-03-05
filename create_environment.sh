@@ -8,8 +8,8 @@ while true;do
 		break
 	fi
 done
-
-main_dir="submission_reminder_$user_name"
+#Create the main directory
+main_dir=submission_reminder_$username
 mkdir -p $main_dir
 #Create subdirectories
 mkdir -p $main_dir/app $main_dir/modules $main_dir/assets $main_dir/config
@@ -59,20 +59,20 @@ function check_submissions {
 EOF
 cat << 'EOF' > $main_dir/assets/submissions.txt
 student, assignment, submission status
-Soreye, Shell Navigation, not submitted
-Nzabinesha, Gitbasics, submitted
+Denys, Shell Navigation, submitted
+Alice, Shell Navigation, submitted
+Bob, Shell Navigation, not submitted
+Charlie, Shell Navigation, submitted
+Nyirasusuruka, Shell Navigation, submitted
+Nzabinesha, Shell Navigation, not submitted
+David, Shell Navigation, not submitted
 Divine, Shell Navigation, not submitted
-Anissa, Shell Basics, submitted
-Alice, Math Homework, submitted
-Bob, Science Project, not submitted
-Denis, History Essay, submitted
-David, Programming Lab, not submitted
-kina, Physics Report, not submitted
-Frank, Chemistry Assignment, submitted
-Grace, Biology Worksheet, not submitted
-Makire, English Presentation, submitted
-Iiankagame, epidemiology Case Study, not submitted
-J0shua, behavioursceince, submitted
+Eve, Shell Navigation, not submitted
+Frank, Shell Navigation, submitted
+Grace, Shell Navigation, not submitted
+Heidi, Shell Navigation, submitted
+Ivan, Shell Navigation, not submitted
+aNyabeza, Shell Navigation, submitted
 EOF
 cat << 'EOF' > $main_dir/config/config.env
 
@@ -90,4 +90,7 @@ EOF
 #Make all required files executable
 chmod +x $main_dir/startup.sh $main_dir/app/reminder.sh $main_dir/modules/functions.sh
 #success message
-echo "hello $user_name Reminder setup complete.change directory to the $main_dir then  Run ./startup.h to get your reminder."
+echo "  .Environment successfully created."
+echo "   -Change the directory to submission_reminder_$username"
+echo "   -Run startup.sh script using the ./startup.sh command to view students' submitted and/or pending submissions."
+echo "  .Note: All scripts already have executble permissions."
